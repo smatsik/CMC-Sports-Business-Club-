@@ -6,54 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CMC Sports Business Club</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, Helvetica, sans-serif; color: #111827; background: #f8fafc; line-height: 1.6; }
-    header { background: #020617; color: white; padding: 18px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10; }
-    .logo { font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.95rem; }
-    nav a { color: white; text-decoration: none; margin-left: 24px; font-size: 0.95rem; opacity: 0.9; }
-    nav a:hover { opacity: 1; }
-    .hero { min-height: 82vh; background: linear-gradient(rgba(2, 6, 23, 0.74), rgba(2, 6, 23, 0.78)), url('https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1800&q=80'); background-size: cover; background-position: center; color: white; display: flex; align-items: center; padding: 0 8%; }
-    .hero-content { max-width: 790px; }
-    .eyebrow { color: #38bdf8; text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.8rem; font-weight: 700; margin-bottom: 18px; }
-    h1 { font-size: clamp(2.8rem, 7vw, 5.8rem); line-height: 0.95; margin-bottom: 24px; letter-spacing: -0.05em; }
-    .hero p { font-size: 1.25rem; max-width: 640px; color: #e5e7eb; margin-bottom: 34px; }
-    .button-row { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn { display: inline-block; padding: 13px 22px; border-radius: 999px; text-decoration: none; font-weight: 700; transition: 0.2s ease; }
-    .btn-primary { background: #38bdf8; color: #020617; }
-    .btn-primary:hover { background: #7dd3fc; transform: translateY(-2px); }
-    .btn-secondary { border: 1px solid rgba(255,255,255,0.55); color: white; }
-    .btn-secondary:hover { border-color: white; transform: translateY(-2px); }
-    section { padding: 72px 8%; }
-    .home-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 44px; align-items: center; }
-    .section-title { font-size: 2.35rem; line-height: 1.1; margin-bottom: 18px; letter-spacing: -0.04em; }
-    .section-intro { color: #475569; font-size: 1.05rem; margin-bottom: 28px; }
-    .stat-box { background: white; border: 1px solid #e2e8f0; border-radius: 24px; padding: 30px; box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08); }
-    .stat-box h3 { margin-bottom: 12px; font-size: 1.35rem; }
-    .stat-box p { color: #475569; }
-    .quick-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .quick-link { background: white; padding: 24px; border-radius: 20px; border: 1px solid #e2e8f0; text-decoration: none; color: #111827; box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06); transition: 0.2s ease; }
-    .quick-link:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(15, 23, 42, 0.1); }
-    .quick-link h3 { margin-bottom: 8px; }
-    .quick-link p { color: #64748b; font-size: 0.96rem; }
-    footer { background: #020617; color: #94a3b8; padding: 28px 8%; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 0.95rem; }
-    footer a { color: #e2e8f0; text-decoration: none; }
-    @media (max-width: 850px) { header { flex-direction: column; align-items: flex-start; gap: 14px; } nav a { margin-left: 0; margin-right: 16px; } .home-grid, .quick-links { grid-template-columns: 1fr; } }
-  :root {
-  --dark: #080808;
-  --cardinal: #9D2235;
-  --gold: #C99700;
-  --light: #F8F6F0;
-  --text: #111827;
-}
-  </style>
+  <!--
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CMC Sports Business Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <div class="logo">CMC Sports Business Club</div>
     <nav>
-      <a href="index.html">Home</a>
+      <a class="active" href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="events.html">Events</a>
       <a href="leadership.html">Leadership</a>
       <a href="join.html">Join</a>
     </nav>
@@ -76,10 +47,11 @@
       <div class="home-grid">
         <div>
           <h2 class="section-title">A professional community for students interested in sports business.</h2>
+          <div class="gold-line"></div>
           <p class="section-intro">CMC Sports Business Club is built for students exploring careers across teams, leagues, media, finance, sponsorship, analytics, entrepreneurship, and live entertainment.</p>
-          <a href="events.html" class="btn btn-primary">See Events</a>
+          <a href="join.html" class="btn btn-primary">Get Involved</a>
         </div>
-        <div class="stat-box">
+        <div class="info-card">
           <h3>Our focus</h3>
           <p>We help students understand the sports industry, build relevant networks, and discover career paths that combine business thinking with a passion for sports.</p>
         </div>
@@ -88,10 +60,11 @@
 
     <section>
       <h2 class="section-title">Explore the club</h2>
+      <div class="gold-line"></div>
       <div class="quick-links">
         <a class="quick-link" href="about.html"><h3>About</h3><p>Learn about our mission and what we do.</p></a>
-        <a class="quick-link" href="events.html"><h3>Events</h3><p>View speaker series, panels, and networking events.</p></a>
         <a class="quick-link" href="leadership.html"><h3>Leadership</h3><p>Meet the students building the club.</p></a>
+        <a class="quick-link" href="join.html"><h3>Join</h3><p>Sign up for updates, events, and opportunities.</p></a>
       </div>
     </section>
   </main>
@@ -102,5 +75,6 @@
   </footer>
 </body>
 </html>
+
 
 
