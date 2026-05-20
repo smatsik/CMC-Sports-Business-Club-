@@ -18,3 +18,369 @@
 </body>
 
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CMC Sports Business Club</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #111827;
+      background: #f8fafc;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #020617;
+      color: white;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    .hero {
+      min-height: 78vh;
+      background: linear-gradient(rgba(2, 6, 23, 0.72), rgba(2, 6, 23, 0.72)),
+        url('https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1800&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      color: #38bdf8;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5.8rem);
+      line-height: 0.95;
+      margin-bottom: 24px;
+      letter-spacing: -0.05em;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 610px;
+      color: #e5e7eb;
+      margin-bottom: 34px;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #38bdf8;
+      color: #020617;
+    }
+
+    .btn-primary:hover {
+      background: #7dd3fc;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      border-color: white;
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-title {
+      font-size: 2.4rem;
+      line-height: 1.1;
+      margin-bottom: 18px;
+      letter-spacing: -0.04em;
+    }
+
+    .section-intro {
+      max-width: 720px;
+      color: #475569;
+      font-size: 1.05rem;
+      margin-bottom: 36px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 22px;
+      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e2e8f0;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      color: #475569;
+    }
+
+    .dark-section {
+      background: #020617;
+      color: white;
+    }
+
+    .dark-section .section-intro,
+    .dark-section .card p {
+      color: #cbd5e1;
+    }
+
+    .dark-section .card {
+      background: #0f172a;
+      border-color: #1e293b;
+    }
+
+    .event-list {
+      display: grid;
+      gap: 16px;
+      max-width: 900px;
+    }
+
+    .event {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .event-date {
+      font-weight: 800;
+      color: #0284c7;
+      white-space: nowrap;
+    }
+
+    .join {
+      text-align: center;
+      background: linear-gradient(135deg, #0284c7, #020617);
+      color: white;
+    }
+
+    .join p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      color: #e0f2fe;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background: #020617;
+      color: #94a3b8;
+      padding: 28px 8%;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: #e2e8f0;
+      text-decoration: none;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        align-items: flex-start;
+        gap: 16px;
+        flex-direction: column;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 16px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .event {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">CMC Sports Business Club</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#events">Events</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#join">Join</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Sports • Business • Careers</div>
+        <h1>Where sports meets strategy.</h1>
+        <p>
+          CMC Sports Business Club connects students interested in sports, finance, media,
+          marketing, analytics, and entrepreneurship with the people and opportunities shaping the industry.
+        </p>
+        <div class="button-row">
+          <a href="#join" class="btn btn-primary">Join the Club</a>
+          <a href="#events" class="btn btn-secondary">Explore Events</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">Built for students who want a seat at the table.</h2>
+      <p class="section-intro">
+        We bring together students curious about the business side of sports — from team operations
+        and sponsorships to athlete branding, investing, technology, and live entertainment.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Industry Access</h3>
+          <p>Speaker events, alumni conversations, and panels with professionals across the sports business world.</p>
+        </div>
+        <div class="card">
+          <h3>Career Development</h3>
+          <p>Resources and networking for internships, recruiting, and learning how different sports careers actually work.</p>
+        </div>
+        <div class="card">
+          <h3>Community</h3>
+          <p>A place for students who love sports to meet, collaborate, and build something lasting on campus.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="events" class="dark-section">
+      <h2 class="section-title">Upcoming events</h2>
+      <p class="section-intro">
+        Add your confirmed events here. For now, these are placeholders so the layout is ready.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Sports Business Speaker Series</h3>
+          <p>Conversations with alumni and industry leaders working in teams, leagues, agencies, and media.</p>
+        </div>
+        <div class="card">
+          <h3>Career Pathways Panel</h3>
+          <p>A student-friendly breakdown of roles in sports finance, marketing, operations, analytics, and consulting.</p>
+        </div>
+        <div class="card">
+          <h3>Networking Night</h3>
+          <p>A casual event to connect students, alumni, and professionals interested in the future of sports.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="leadership">
+      <h2 class="section-title">Leadership</h2>
+      <p class="section-intro">
+        Replace these placeholders with names, roles, photos, and LinkedIn links once leadership is finalized.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>President</h3>
+          <p>Name / Class Year</p>
+        </div>
+        <div class="card">
+          <h3>Vice President</h3>
+          <p>Name / Class Year</p>
+        </div>
+        <div class="card">
+          <h3>Events Chair</h3>
+          <p>Name / Class Year</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="join" class="join">
+      <h2 class="section-title">Interested in sports business?</h2>
+      <p>
+        Join our mailing list to hear about speaker events, networking opportunities, internship resources,
+        and club updates.
+      </p>
+      <a href="mailto:your-email@example.com" class="btn btn-primary">Contact Us</a>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 CMC Sports Business Club</span>
+    <span><a href="mailto:your-email@example.com">your-email@example.com</a></span>
+  </footer>
+</body>
+</html>
