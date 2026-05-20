@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | CMC Sports Business Club</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, Helvetica, sans-serif; color: #111827; background: #f8fafc; line-height: 1.6; }
+    header { background: #020617; color: white; padding: 18px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10; }
+    .logo { font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.95rem; }
+    nav a { color: white; text-decoration: none; margin-left: 24px; font-size: 0.95rem; opacity: 0.9; }
+    nav a:hover { opacity: 1; }
+    .page-hero { background: #020617; color: white; padding: 90px 8%; }
+    .eyebrow { color: #38bdf8; text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.8rem; font-weight: 700; margin-bottom: 18px; }
+    h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); line-height: 1; letter-spacing: -0.05em; max-width: 850px; }
+    section { padding: 72px 8%; }
+    .section-title { font-size: 2.25rem; line-height: 1.1; margin-bottom: 18px; letter-spacing: -0.04em; }
+    .section-intro { max-width: 820px; color: #475569; font-size: 1.08rem; margin-bottom: 34px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .card { background: white; padding: 28px; border-radius: 22px; box-shadow: 0 14px 40px rgba(15,23,42,0.08); border: 1px solid #e2e8f0; }
+    .card h3 { margin-bottom: 12px; font-size: 1.25rem; }
+    .card p { color: #475569; }
+    footer { background: #020617; color: #94a3b8; padding: 28px 8%; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 0.95rem; }
+    footer a { color: #e2e8f0; text-decoration: none; }
+    @media (max-width: 850px) { header { flex-direction: column; align-items: flex-start; gap: 14px; } nav a { margin-left: 0; margin-right: 16px; } .cards { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header><div class="logo">CMC Sports Business Club</div><nav><a href="index.html">Home</a><a href="about.html">About</a><a href="events.html">Events</a><a href="leadership.html">Leadership</a><a href="join.html">Join</a></nav></header>
+  <main>
+    <div class="page-hero"><div class="eyebrow">About Us</div><h1>We connect students with the people, ideas, and career paths shaping the sports industry.</h1></div>
+    <section>
+      <h2 class="section-title">Our mission</h2>
+      <p class="section-intro">CMC Sports Business Club creates opportunities for students to explore the business side of sports through professional development, speaker events, networking, and hands-on learning.</p>
+      <div class="cards">
+        <div class="card"><h3>Access</h3><p>We bring students closer to alumni, professionals, and organizations across the sports industry.</p></div>
+        <div class="card"><h3>Education</h3><p>We help members learn how careers in sports business actually work, from entry-level roles to long-term paths.</p></div>
+        <div class="card"><h3>Community</h3><p>We create a space for students who love sports and business to connect across interests and class years.</p></div>
+      </div>
+    </section>
+  </main>
+  <footer><span>© 2026 CMC Sports Business Club</span><span><a href="mailto:your-email@example.com">your-email@example.com</a></span></footer>
+</body>
+</html>
+
