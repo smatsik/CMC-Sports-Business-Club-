@@ -1,0 +1,568 @@
+<!--
+CMC Sports Business Club Website — Clean Version
+
+Create these 5 files in GitHub:
+1. index.html
+2. about.html
+3. leadership.html
+4. join.html
+5. style.css
+
+No Events page included.
+-->
+
+
+<!-- =========================
+FILE 1: style.css
+========================= -->
+
+:root {
+  --dark: #080808;
+  --cardinal: #9D2235;
+  --cardinal-dark: #5C101D;
+  --gold: #C99700;
+  --gold-light: #E0B63F;
+  --light: #F8F6F0;
+  --text: #111827;
+  --muted: #5F6673;
+  --border: #E6E0D5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--light);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--dark);
+  color: white;
+  padding: 18px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 24px;
+  font-size: 0.95rem;
+  opacity: 0.88;
+}
+
+nav a:hover,
+nav a.active {
+  opacity: 1;
+  color: var(--gold-light);
+}
+
+.hero {
+  min-height: 82vh;
+  background:
+    linear-gradient(rgba(8, 8, 8, 0.72), rgba(8, 8, 8, 0.86)),
+    url('https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1800&q=80');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+}
+
+.hero-content {
+  max-width: 790px;
+}
+
+.eyebrow {
+  color: var(--gold-light);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 7vw, 5.8rem);
+  line-height: 0.95;
+  margin-bottom: 24px;
+  letter-spacing: -0.055em;
+}
+
+.hero p {
+  font-size: 1.22rem;
+  max-width: 650px;
+  color: #F3F4F6;
+  margin-bottom: 34px;
+}
+
+.button-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+  transition: 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: black;
+}
+
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  color: white;
+}
+
+.btn-secondary:hover {
+  border-color: white;
+  color: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.page-hero {
+  background: linear-gradient(135deg, var(--cardinal), var(--dark));
+  color: white;
+  padding: 105px 8%;
+}
+
+.page-hero h1 {
+  max-width: 920px;
+}
+
+.page-hero p {
+  max-width: 720px;
+  color: #F5E9E9;
+  font-size: 1.15rem;
+}
+
+section {
+  padding: 76px 8%;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  line-height: 1.1;
+  margin-bottom: 18px;
+  letter-spacing: -0.045em;
+}
+
+.gold-line {
+  width: 78px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 999px;
+  margin: 18px 0 28px;
+}
+
+.section-intro {
+  max-width: 780px;
+  color: var(--muted);
+  font-size: 1.06rem;
+  margin-bottom: 34px;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 44px;
+  align-items: center;
+}
+
+.info-card,
+.card,
+.person,
+.join-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 16px 42px rgba(15, 23, 42, 0.08);
+}
+
+.info-card {
+  padding: 32px;
+}
+
+.info-card h3,
+.card h3,
+.person h3 {
+  margin-bottom: 10px;
+  font-size: 1.28rem;
+}
+
+.info-card p,
+.card p,
+.person p,
+.join-card p {
+  color: var(--muted);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  padding: 28px;
+}
+
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.quick-link {
+  background: white;
+  padding: 25px;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+  transition: 0.2s ease;
+}
+
+.quick-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.1);
+}
+
+.quick-link h3 {
+  margin-bottom: 8px;
+}
+
+.quick-link p {
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.team {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.person {
+  padding: 28px;
+}
+
+.photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #D8CDBA, #F8F6F0);
+  margin-bottom: 18px;
+}
+
+.join-card {
+  padding: 36px;
+  max-width: 760px;
+}
+
+.join-card h2 {
+  margin-bottom: 14px;
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+}
+
+.join-card p {
+  margin-bottom: 26px;
+}
+
+footer {
+  background: var(--dark);
+  color: #B7BEC8;
+  padding: 28px 8%;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+
+footer a {
+  color: #F3F4F6;
+  text-decoration: none;
+}
+
+@media (max-width: 850px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  nav a {
+    margin-left: 0;
+    margin-right: 16px;
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+
+  .home-grid,
+  .cards,
+  .quick-links,
+  .team {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 76vh;
+  }
+}
+
+
+<!-- =========================
+FILE 2: index.html
+========================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CMC Sports Business Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">CMC Sports Business Club</div>
+    <nav>
+      <a class="active" href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="leadership.html">Leadership</a>
+      <a href="join.html">Join</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Sports • Business • Careers</div>
+        <h1>Where sports meets strategy.</h1>
+        <p>Connecting students to the business side of sports through speaker events, career resources, alumni conversations, and industry access.</p>
+        <div class="button-row">
+          <a href="join.html" class="btn btn-primary">Join the Club</a>
+          <a href="about.html" class="btn btn-secondary">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="home-grid">
+        <div>
+          <h2 class="section-title">A professional community for students interested in sports business.</h2>
+          <div class="gold-line"></div>
+          <p class="section-intro">CMC Sports Business Club is built for students exploring careers across teams, leagues, media, finance, sponsorship, analytics, entrepreneurship, and live entertainment.</p>
+          <a href="join.html" class="btn btn-primary">Get Involved</a>
+        </div>
+        <div class="info-card">
+          <h3>Our focus</h3>
+          <p>We help students understand the sports industry, build relevant networks, and discover career paths that combine business thinking with a passion for sports.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Explore the club</h2>
+      <div class="gold-line"></div>
+      <div class="quick-links">
+        <a class="quick-link" href="about.html"><h3>About</h3><p>Learn about our mission and what we do.</p></a>
+        <a class="quick-link" href="leadership.html"><h3>Leadership</h3><p>Meet the students building the club.</p></a>
+        <a class="quick-link" href="join.html"><h3>Join</h3><p>Sign up for updates, events, and opportunities.</p></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 CMC Sports Business Club</span>
+    <span><a href="mailto:your-email@example.com">your-email@example.com</a></span>
+  </footer>
+</body>
+</html>
+
+
+<!-- =========================
+FILE 3: about.html
+========================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | CMC Sports Business Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">CMC Sports Business Club</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a class="active" href="about.html">About</a>
+      <a href="leadership.html">Leadership</a>
+      <a href="join.html">Join</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="eyebrow">About Us</div>
+      <h1>Connecting students with the people, ideas, and career paths shaping the sports industry.</h1>
+    </div>
+
+    <section>
+      <h2 class="section-title">Our mission</h2>
+      <div class="gold-line"></div>
+      <p class="section-intro">CMC Sports Business Club creates opportunities for students to explore the business side of sports through professional development, speaker events, networking, and hands-on learning.</p>
+      <div class="cards">
+        <div class="card"><h3>Access</h3><p>We bring students closer to alumni, professionals, and organizations across the sports industry.</p></div>
+        <div class="card"><h3>Education</h3><p>We help members learn how careers in sports business actually work, from entry-level roles to long-term paths.</p></div>
+        <div class="card"><h3>Community</h3><p>We create a space for students who love sports and business to connect across interests and class years.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 CMC Sports Business Club</span>
+    <span><a href="mailto:your-email@example.com">your-email@example.com</a></span>
+  </footer>
+</body>
+</html>
+
+
+<!-- =========================
+FILE 4: leadership.html
+========================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leadership | CMC Sports Business Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">CMC Sports Business Club</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a class="active" href="leadership.html">Leadership</a>
+      <a href="join.html">Join</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="eyebrow">Leadership</div>
+      <h1>Meet the team building CMC Sports Business Club.</h1>
+    </div>
+
+    <section>
+      <div class="team">
+        <div class="person"><div class="photo"></div><h3>Name Here</h3><p>President</p></div>
+        <div class="person"><div class="photo"></div><h3>Name Here</h3><p>Vice President</p></div>
+        <div class="person"><div class="photo"></div><h3>Name Here</h3><p>Director of Events</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 CMC Sports Business Club</span>
+    <span><a href="mailto:your-email@example.com">your-email@example.com</a></span>
+  </footer>
+</body>
+</html>
+
+
+<!-- =========================
+FILE 5: join.html
+========================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join | CMC Sports Business Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">CMC Sports Business Club</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="leadership.html">Leadership</a>
+      <a class="active" href="join.html">Join</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="eyebrow">Join Us</div>
+      <h1>Get involved with sports business on campus.</h1>
+      <p>Join our mailing list to hear about speaker events, networking opportunities, internship resources, and club updates.</p>
+    </div>
+
+    <section>
+      <div class="join-card">
+        <h2>Join the mailing list</h2>
+        <p>Replace this button with your Google Form link once you create an interest form. For now, it opens an email contact link.</p>
+        <a class="btn btn-primary" href="mailto:your-email@example.com">Contact Us</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 CMC Sports Business Club</span>
+    <span><a href="mailto:your-email@example.com">your-email@example.com</a></span>
+  </footer>
+</body>
+</html>
